@@ -1,0 +1,13 @@
+class Solution:
+    def countKDifference(self, nums: List[int], k: int) -> int:
+        count = 0
+        i = 0
+        j = 0
+        while i != len(nums):
+            j+=1
+            if abs(nums[j]-nums[i])==k:
+                count +=1
+            if j == len(nums)-1:
+                j = i
+                i = i+1
+        return count
