@@ -1,0 +1,14 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--",
+                "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."]
+        ans = {}
+        for i in range(len(words)):
+            x = ""
+            for j in range(len(words[i])):
+                index = arr.index(words[i][j])
+                x+=morse[index]
+            ans[x] = i
+        return len(ans)
