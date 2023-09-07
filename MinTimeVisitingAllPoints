@@ -1,0 +1,12 @@
+class Solution:
+    def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
+        temp = []
+        j=1
+        for i in range(len(points)):
+            dif = []
+            dif.append(abs(points[i][0]-points[j][0]))
+            dif.append(abs(points[i][1]-points[j][1]))
+            temp.append(max(dif))
+            j+=1
+            if j==len(points):break
+        return(sum(temp))
