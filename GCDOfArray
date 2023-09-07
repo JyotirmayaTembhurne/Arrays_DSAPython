@@ -1,0 +1,9 @@
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+        count = 1
+        div = []
+        for i in range(max(nums)):
+            if min(nums)%count == 0 and max(nums)%count == 0:
+                div.append(count)
+            count+=1
+        return(max(div))
