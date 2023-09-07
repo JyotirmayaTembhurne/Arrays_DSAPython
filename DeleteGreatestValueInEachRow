@@ -1,0 +1,17 @@
+class Solution:
+    def deleteGreatestValue(self, grid: List[List[int]]) -> int:
+        temp = []
+        ans = []
+        a = []
+        m = len(grid)
+        n = len(grid[0])
+        for j in range(m*n):
+            for i in range(m):
+                if len(grid[i])!=0:
+                    grid[i].sort()
+                    temp.append(grid[i].pop())
+            ans.append(temp)
+            temp = []
+        for i in range(n):
+            a.append(max(ans[i]))
+        return sum(a)
