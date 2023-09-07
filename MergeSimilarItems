@@ -1,0 +1,24 @@
+class Solution:
+    def mergeSimilarItems(self, items1: List[List[int]], items2: List[List[int]]) -> List[List[int]]:
+        if len(items1) >= len(items2):
+            val = []
+            for i in range(len(items1)):
+                val.append(items1[i][0])
+                for j in range(len(items2)):
+                    if items2[j][0] == items1[i][0]:
+                        items1[i][1] = items1[i][1]+items2[j][1]
+            for k in range(len(items2)):
+                if items2[k][0] not in val:
+                    items1.append(items2[k])
+            return(sorted(items1))
+        else:
+            val = []
+            for i in range(len(items2)):
+                val.append(items2[i][0])
+                for j in range(len(items1)):
+                    if items1[j][0] == items2[i][0]:
+                        items2[i][1] = items2[i][1]+items1[j][1]
+            for k in range(len(items1)):
+                if items1[k][0] not in val:
+                    items2.append(items1[k])
+            return(sorted(items2))
