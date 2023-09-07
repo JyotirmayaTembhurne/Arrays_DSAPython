@@ -1,0 +1,20 @@
+class Solution:
+    def oddCells(self, m: int, n: int, indices: List[List[int]]) -> int:
+        mat = []
+        for i in range(m):
+            temp = []
+            for j in range(n):
+                temp.append(0)
+            mat.append(temp)
+            temp = []
+        for i in range(len(indices)):
+            for j in range(n):
+                mat[indices[i][0]][j] += 1
+            for k in range(m):
+                mat[k][indices[i][1]] += 1
+        count = 0
+        for i in range(len(mat)):
+            for j in range(len(mat[i])):
+                if mat[i][j]%2!=0:
+                    count+=1
+        return(count)
