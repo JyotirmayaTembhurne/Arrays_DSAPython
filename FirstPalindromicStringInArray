@@ -1,0 +1,11 @@
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        for i in range(len(words)):
+            rev = ''
+            for j in range(len(words[i])-1,-1,-1):
+                rev+=words[i][j]
+            if rev==words[i]:
+                return(rev)
+                break
+            elif i==len(words)-1:
+                return('')
