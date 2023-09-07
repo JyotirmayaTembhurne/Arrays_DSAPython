@@ -1,0 +1,13 @@
+class Solution:
+    def numberOfPairs(self, nums: List[int]) -> List[int]:
+        nums.sort()
+        temp = []
+        count = []
+        for i in range(len(nums)):
+            if i+1<len(nums) and nums[i] == nums[i+1]:
+                temp.append([nums[i],nums[i+1]])
+                nums[i] = None
+                nums[i+1] = None
+            if nums[i]!=None:
+                count.append(nums[i])
+        return([len(temp),len(count)])
