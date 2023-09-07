@@ -1,0 +1,8 @@
+class Solution:
+    def separateDigits(self, nums: List[int]) -> List[int]:
+        d = []
+        for i in range(len(nums)):
+            nums[i]=(str(nums[i]))
+            for j in range(len(nums[i])):
+                d.append(int(nums[i][j]))
+        return(d)
