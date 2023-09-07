@@ -1,0 +1,17 @@
+class Solution:
+    def diStringMatch(self, s: str) -> List[int]:
+        p = []
+        a = 0
+        b = len(s)
+        for i in range(len(s)):
+            if s[i] == "I":
+                p.append(a)
+                a+=1
+            if s[i] == "D":
+                p.append(b)
+                b-=1
+        if s[len(s)-1] == "I":
+            p.append(a)
+        if s[len(s)-1] == "D":
+            p.append(b)
+        return(p)
