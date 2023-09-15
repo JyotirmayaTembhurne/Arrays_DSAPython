@@ -1,0 +1,9 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        length = len(nums)
+        set1 = set(nums)
+        set2 = set()
+        for i in range(length+1):
+            set2.add(i)
+        return (list(set2.difference(set1))[0])
+        
