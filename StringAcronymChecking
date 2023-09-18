@@ -1,0 +1,6 @@
+class Solution:
+    def isAcronym(self, words: List[str], s: str) -> bool:
+        expected = str()
+        for word in words:
+            expected += word[0]
+        return expected == s
