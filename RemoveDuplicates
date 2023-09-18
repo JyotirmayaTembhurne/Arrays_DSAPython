@@ -1,0 +1,11 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        s = set(nums)
+        length1 = len(s)
+        length2 = len(nums)
+        for i,value in enumerate(s):
+            nums[i] = value
+        for i in range(length1,length2):
+            nums.pop()
+        nums.sort()
+        
