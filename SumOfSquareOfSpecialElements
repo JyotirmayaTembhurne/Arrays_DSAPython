@@ -1,0 +1,8 @@
+class Solution:
+    def sumOfSquares(self, nums: List[int]) -> int:
+        result = 0
+        length = len(nums)
+        for i, number in enumerate(nums):
+            if length % (i + 1) == 0:
+                result += number * number
+        return result
