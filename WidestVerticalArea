@@ -1,0 +1,11 @@
+x = list()
+for p in points:
+    x.append(p[0])
+x.sort()
+print(x)
+maxdiff = 0
+length = len(x)
+for i in range(1, length):
+    if x[i] - x[i - 1] > maxdiff:
+        maxdiff = x[i] - x[i - 1]
+print(maxdiff)
