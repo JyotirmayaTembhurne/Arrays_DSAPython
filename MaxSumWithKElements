@@ -1,0 +1,9 @@
+class Solution:
+    def maximizeSum(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        m = int()
+        for i in range(k):
+            k = nums.pop()
+            m+=k
+            nums.append(k+1)
+        return m
