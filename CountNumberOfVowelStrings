@@ -1,0 +1,19 @@
+class Solution:
+    def vowelStrings(self, words: List[str], left: int, right: int) -> int:
+        # pair = {"a", "e", "i", "o", "u"}
+        Count = 0
+        # for i in range(left, right + 1):
+        #     if words[i][0] in pair and words[i][-1] in pair:
+        #         Count += 1
+        # return Count
+        # pair = {"a":True, "e":True, "i":True, "o":True, "u":True}
+        # for i in range(left,right +1):
+        #     try:
+        #         pair[words[i][0]]
+        #         pair[words[i][-1]]
+        #         Count+=1
+        #     except Exception:
+        #         pass
+        # return Count
+                
+        
