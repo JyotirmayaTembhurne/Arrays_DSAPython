@@ -1,0 +1,15 @@
+class Solution:
+    def subsetXORSum(self, nums: List[int]) -> int:
+        from itertools import combinations
+        subsets = list()
+        result = list()
+        for i in range(len(nums) + 1):
+            subsets.extend(combinations(nums, i))
+        for subset in subsets:
+            x = int()
+            for value in subset:
+                x ^= value
+            result.append(x)
+        return sum(result)
+
+        
