@@ -1,0 +1,9 @@
+class Solution:
+    def smallestRangeI(self, nums: List[int], k: int) -> int:
+        nums.sort()
+        minimum = nums[0] + k
+        maximum = nums[-1] - k
+        result = maximum - minimum
+        if result<=0:
+            return 0
+        return result
