@@ -1,0 +1,13 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+n = input()
+arr = list()
+length = len(n)
+for number in n:
+    arr.append(int(number) ** length)
+if sum(arr) == int(n):
+    print("true")
+else:
+    print("false")
