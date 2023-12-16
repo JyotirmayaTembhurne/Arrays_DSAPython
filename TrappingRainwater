@@ -1,0 +1,21 @@
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        left, right = list(), list()
+        ans = 0
+        length = len(height)
+        for h in height:
+            if not left:
+                left.append(h)
+            else:
+                left.append(max(left[-1], h))
+        for h in reversed(height):
+            if not right:
+                right.append(h)
+            else:
+                right.append(max(right[-1], h))
+        right = right[-1::-1]
+        for i in range(length):
+            ans += min(left[i], right[i]) - height[i]
+        return ans
+
+
