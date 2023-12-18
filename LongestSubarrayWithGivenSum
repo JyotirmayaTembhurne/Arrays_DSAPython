@@ -1,0 +1,22 @@
+a = [-1, 2, 3, 4, -2, 1, 1]
+k = 5
+
+
+def func(a, k):
+    start, end = 0, -1
+    currsum = 0
+    ans = int()
+    hmap = dict()
+    for i in range(len(a)):
+        currsum += a[i]
+        if currsum == k:
+            start, end = 0, i
+            ans = max(ans, len(a[start : end + 1]))
+        if (currsum - k) in hmap:
+            start, end = hmap[currsum - k] + 1, i
+            ans = max(ans, len(a[start : end + 1]))
+        hmap[currsum] = i
+    return ans
+
+
+print(func(a, k))
