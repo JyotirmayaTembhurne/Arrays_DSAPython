@@ -1,0 +1,12 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        currmax=currmin=answer=nums[0]
+        for val in nums[1:]:
+            if val<0:
+                currmax,currmin = currmin,currmax
+            currmax = max(val,currmax*val)
+            currmin = min(val,currmin*val)
+            answer = max(answer,currmax)
+        return answer    
